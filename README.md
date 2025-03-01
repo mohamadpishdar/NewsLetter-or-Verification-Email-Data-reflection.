@@ -15,35 +15,37 @@ Impact:
 
 This vulnerability enables attackers to conduct phishing attacks by crafting emails that appear to originate from the legitimate service. Users may be deceived into clicking malicious links, potentially leading to:
 
-    Credential theft
-    Malware installation
-    Other forms of social engineering attacks.
-    Damage to the reputation of the organization due to abuse of trust.
+    1-Credential theft
+    2-Malware installation
+    3-Other forms of social engineering attacks.
+    4-Damage to the reputation of the organization due to abuse of trust.
 
 Attack Scenario:
 
-    Attacker Interception (Optional, but enhances attack): An attacker may intercept a legitimate registration request (e.g., via a man-in-the-middle attack) to observe the expected email content.
-    Malicious Registration: The attacker registers using the target user's email address and injects malicious content (e.g., a phishing URL, deceptive text) into the registration form fields that are reflected in the email.
-    Confirmation Email Delivery: The target user receives a confirmation or subscription email from the legitimate service's email address, containing the attacker's injected content.
-    User Deception: The target user, trusting the sender, may click the malicious link.
-    Compromise: The malicious link leads to a phishing site or other malicious resource, potentially resulting in credential theft or other forms of compromise.
+    1-Attacker Interception (Optional, but enhances attack): An attacker may intercept a legitimate registration request (e.g., via a man-in-the-middle attack) to observe the expected email content.
+    2-Malicious Registration: The attacker registers using the target user's email address and injects malicious content (e.g., a phishing URL, deceptive text) into the registration form fields that are reflected in the email.
+    3-Confirmation Email Delivery: The target user receives a confirmation or subscription email from the legitimate service's email address, containing the attacker's injected content.
+    4-User Deception: The target user, trusting the sender, may click the malicious link.
+    5-Compromise: The malicious link leads to a phishing site or other malicious resource, potentially resulting in credential theft or other forms of compromise.
 
 Recommendation:
 
-    Implement robust input validation and sanitization on all user-supplied data before incorporating it into emails.
-    Employ output encoding to prevent injected content from being interpreted as executable code or HTML.
-    Consider using parameterized email templates or dedicated libraries that handle content insertion securely.
-    Implement rate limiting to prevent mass malicious registrations.
-    Implement content security policy to prevent execution of malicious javascript.
+    1-Implement robust input validation and sanitization on all user-supplied data before incorporating it into emails.
+    2-Employ output encoding to prevent injected content from being interpreted as executable code or HTML.
+    3-Consider using parameterized email templates or dedicated libraries that handle content insertion securely.
+    4-Implement rate limiting to prevent mass malicious registrations.
+    5-Implement content security policy to prevent execution of malicious javascript.
 
 Severity: High (due to potential for credential theft and phishing attacks)
 
 To reiterate, the core weaknesses that enable this attack are:
 
-    Lack of Input Validation and Sanitization: The service fails to scrutinize user input, allowing malicious code and URLs to slip through.
-    Direct Incorporation of User Input: Raw user input is directly reflected in the email, delivering the attack payload to the victim.
-    Lack of Registration Confirmation: The absence of email verification makes it easy for attackers to target any email address.
-    Attackers exploit user trust in legitimate services to send malicious emails that appear genuine, especially without email verification.
+    1-Lack of Input Validation and Sanitization: The service fails to scrutinize user input, allowing malicious code and URLs to slip through.
+    2-Direct Incorporation of User Input: Raw user input is directly reflected in the email, delivering the attack payload to the victim.
+    3-Lack of Registration Confirmation: The absence of email verification makes it easy for attackers to target any email address.
+    4-Attackers exploit user trust in legitimate services to send malicious emails that appear genuine, especially without email verification.
+
+The workflow of this attack is demonstrated in the image below:
 
 ![1](https://github.com/user-attachments/assets/cb68e2e6-18aa-466a-969d-8e8ebccf1eeb)
 
