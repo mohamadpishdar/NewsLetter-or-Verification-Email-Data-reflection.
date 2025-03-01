@@ -65,8 +65,12 @@ While both CWE-79 (Reflected XSS) and this email content injection vulnerability
 <h2>References</h2>
 
 Bazzell, M. (2016). Open source intelligence techniques: resources for searching and analyzing online information. CreateSpace Independent Publishing Platform.
+
 CWE-87: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'). https://cwe.mitre.org/data/definitions/87.html
+
 CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting'). https://cwe.mitre.org/data/definitions/79.html
+
 Anti-Phishing Working Group (APWG). https://apwg.org/
+
 NIST Special Publication 800-45: Guidelines on Electronic Mail Security. https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-45.pdf
 
